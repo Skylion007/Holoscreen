@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{79391AC5-8752-B4CC-F33F-BB9EB1094377}</ProjectGuid>
+	<ProjectGuid>{B2EAF763-36C7-39A7-DBFE-A7361654798B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -53,7 +53,38 @@
      <Compile Include="Assets\Standard Assets\ExceptionHelper.cs" />
      <Compile Include="Assets\Standard Assets\INativeWrapper.cs" />
      <Compile Include="Assets\Standard Assets\KinectBuffer.cs" />
+     <Compile Include="Assets\Standard Assets\KinectFaceSpecialCases.cs" />
      <Compile Include="Assets\Standard Assets\KinectSpecialCases.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\CaptureStatusChangedEventArgs.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\CollectionStatusChangedEventArgs.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceAlignment.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceAlignmentQuality.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrame.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrameArrivedEventArgs.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrameFeatures.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrameReader.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrameReference.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrameResult.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceFrameSource.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceModel.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceModelBuilder.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceModelBuilderAttributes.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceModelBuilderCaptureStatus.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceModelBuilderCollectionStatus.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceModelData.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FacePointType.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceProperty.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceShapeAnimations.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\FaceShapeDeformations.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\HighDefinitionFaceFrame.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\HighDefinitionFaceFrameArrivedEventArgs.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\HighDefinitionFaceFrameReader.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\HighDefinitionFaceFrameReference.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\HighDefinitionFaceFrameSource.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\HighDetailFacePoints.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\KinectFaceUnityAddinUtils.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\RectI.cs" />
+     <Compile Include="Assets\Standard Assets\Microsoft\Kinect\Face\TrackingIdLostEventArgs.cs" />
      <Compile Include="Assets\Standard Assets\NativeObjectCache.cs" />
      <Compile Include="Assets\Standard Assets\NativeWrapper.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
@@ -133,8 +164,13 @@
      <Compile Include="Assets\Standard Assets\Windows\Kinect\TrackingConfidence.cs" />
      <Compile Include="Assets\Standard Assets\Windows\Kinect\TrackingState.cs" />
      <Compile Include="Assets\Standard Assets\Windows\Kinect\Vector4.cs" />
+     <None Include="Assets\Resources\SpeechGrammar.grxml.txt" />
+     <None Include="Assets\Asset\Shaders\Normal-Diffuse.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>C:/Users/Carl/Documents/GitHub/Holoscreen/Assets/KinectScripts/SharpZipLib/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

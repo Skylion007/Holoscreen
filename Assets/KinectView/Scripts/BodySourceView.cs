@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using Kinect = Windows.Kinect;
 
 public class BodySourceView : MonoBehaviour 
-{
+{	
     public Material BoneMaterial;
     public GameObject BodySourceManager;
     
     private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
     private BodySourceManager _BodyManager;
-	static List<Transform> JointTransforms;
+	public static List<Transform> JointTransforms = new List<Transform>(25);
+	public static List<Windows.Kinect.JointOrientation> JointOrientations = 
+		new List<Windows.Kinect.JointOrientation> (25);
+    public static bool bodyTracked;
     
     private Dictionary<Kinect.JointType, Kinect.JointType> _BoneMap = new Dictionary<Kinect.JointType, Kinect.JointType>()
     {
@@ -132,6 +135,8 @@ public class BodySourceView : MonoBehaviour
     private void RefreshBodyObject(Kinect.Body body, GameObject bodyObject)
     {
 		JointTransforms.Clear();
+		JointOrientations.Clear();
+        bodyTracked = body.IsTracked;
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
             Kinect.Joint sourceJoint = body.Joints[jt];
@@ -143,8 +148,10 @@ public class BodySourceView : MonoBehaviour
             }
             
             Transform jointObj = bodyObject.transform.FindChild(jt.ToString());
+
 			// UPDATE STATIC VAR
 			JointTransforms.Add(jointObj);
+			JointOrientations.Add(body.JointOrientations[jt]);
 
             jointObj.localPosition = GetVector3FromJoint(sourceJoint);
             
